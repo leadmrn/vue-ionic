@@ -5,7 +5,7 @@ import MemoriesPage from '../pages/MemoriesPage';
 const routes = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/memories'
   },
   {
     path: '/memories',

@@ -1,9 +1,9 @@
 <template>
   <base-layout pageTitle="Mes souvenirs">
     <ion-list>
-        <ion-item router-link="/memories/1">Voyage à l'ile Maurice</ion-item>
-        <ion-item>Nager avec des dauphins</ion-item>
-        <ion-item>Road trip à Cuba</ion-item>
+        <ion-item v-for="memory in memories" :router-link="`/memories/${memory.id}`" :key="memory.id">
+        {{ memory.name }}
+        </ion-item>
       </ion-list>
   </base-layout>
 </template>
@@ -15,6 +15,27 @@ export default {
   components: {
     IonList,
     IonItem
+  },
+  data() {
+    return{
+      memories: [
+        {
+          id: 1,
+          name: "Voyage à l'ile Maurice",
+          description: "C'était super !"
+        },
+        {
+          id: 2,
+          name: "Nager avec des dauphins",
+          description: "L'océan était glaçé"
+        },
+        {
+          id: 3,
+          name: "Road trip à Cuba",
+          description: "Pour les 50 ans de tata"
+        }
+      ]
+    }
   }
 }
 </script>
